@@ -29,6 +29,11 @@ def search_dataset(user_msg: str):
     
     return None
 
+@app.route('/') 
+def home():
+    """Home route to show that the API is running."""
+    return "JeeVan API is live and running!"
+
 @app.route("/chat", methods=["POST"])
 def chat():
     """Main chat route: answers from dataset or Hugging Face API."""
@@ -58,3 +63,4 @@ def chat():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
