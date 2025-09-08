@@ -5,7 +5,7 @@ import requests
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}}) 
 
 # Load dataset
 df = pd.read_csv("Crop.csv")
@@ -63,3 +63,4 @@ def chat():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
